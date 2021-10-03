@@ -17,6 +17,10 @@ get "/items" => "public/items#index"
 get "/items/:id" => "public/items#show"
 
 namespace :admin do
+    resources :genres, only:[:index, :create, :edit, :update]
+  end
+
+namespace :admin do
     resources :items, only:[:index, :new, :create, :show, :edit, :update]
   end
 
