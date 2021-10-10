@@ -6,7 +6,7 @@
 <%= form_with model:@genre, url: admin_genre_path, local: true do |f| %>
 <div class='row'>
   <%= f.label :ジャンル名, class: "col-md-2 col-form-label text-center" %>
-  <%= f.text_field :name, class: "col-md-3form-control" %>
+  <%= f.text_field :name, class: "col-md-3 form-control" %>
   <div class="col-md-1 ml-3">
     <%= f.submit '変更を保存', class: "btn btn-success" %>
   </div>
