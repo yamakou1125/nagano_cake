@@ -1,39 +1,27 @@
 Rails.application.routes.draw do
-  devise_for :admin, controllers: {
-  sessions:      'admin/sessions',
-  passwords:     'admin/passwords',
-  registrations: 'admin/registrations'
+devise_for :admin,skip: [:passwords, :registrations], controllers: {
+  sessions:      'admin/sessions'
 }
 devise_for :customers, controllers: {
-  sessions:      'customers/sessions',
-  passwords:     'customers/passwords',
-  registrations: 'customers/registrations'
+  sessions:      'public/sessions',
+  passwords:     'public/passwords',
+  registrations: 'public/registrations'
 }
 
 root to: 'public/homes#top'
-get "/about" => "public/homes#about"
 
-get "/items" => "public/items#index"
-get "/items/:id" => "public/items#show"
 
 namespace :admin do
     root to: 'homes#top'
-  end
-
-namespace :admin do
     resources :genres, only:[:index, :create, :edit, :update]
-  end
-
-namespace :admin do
     resources :items, only:[:index, :new, :create, :show, :edit, :update]
+    resources :customers, only:[:index, :show, :edit, :update]
+    resources :orders, only:[:show, :update]
   end
-  
-namespace :admin do
-  resources :customers, only:[:index, :show, :edit, :update]
-end
 
-namespace :admin do
-  resources :orders, only:[:show, :update]
+scope module: :public do
+  get "/about" => "homes#about"
+  resources :items, only:[:index, :show]
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
