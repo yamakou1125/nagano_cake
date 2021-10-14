@@ -2,14 +2,13 @@ Rails.application.routes.draw do
 devise_for :admin,skip: [:passwords, :registrations], controllers: {
   sessions:      'admin/sessions'
 }
-devise_for :customers, controllers: {
+
+get 'customers/edit' => 'public/customers#edit', as: 'public_edit_customer'
+
+devise_for :customers,skip: [:passwords], controllers: {
   sessions:      'public/sessions',
-  passwords:     'public/passwords',
   registrations: 'public/registrations'
 }
-
-root to: 'public/homes#top'
-
 
 namespace :admin do
     root to: 'homes#top'
@@ -20,10 +19,10 @@ namespace :admin do
   end
 
 scope module: :public do
+  root to: 'homes#top'
   get "/about" => "homes#about"
   resources :items, only:[:index, :show]
   get "/customers/my_page" => "customers#show"
-  get "/customers/edit" => "customers#edit"
   patch "/customers" => "customers#update"
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdraw" => "customers#withdraw"
