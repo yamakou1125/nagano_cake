@@ -4,6 +4,7 @@ devise_for :admin,skip: [:passwords, :registrations], controllers: {
 }
 
 get 'customers/edit' => 'public/customers#edit', as: 'public_edit_customer'
+patch '/customers' => 'public/customers#update', as: 'public_update_customer'
 
 devise_for :customers,skip: [:passwords], controllers: {
   sessions:      'public/sessions',
@@ -23,7 +24,7 @@ scope module: :public do
   get "/about" => "homes#about"
   resources :items, only:[:index, :show]
   get "/customers/my_page" => "customers#show"
-  patch "/customers" => "customers#update"
+  # patch "/customers" => "customers#update"
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdraw" => "customers#withdraw"
 end
