@@ -1,1 +1,17 @@
-<h1>public/items/show.html.erb</h1>
+<div class="container">
+  <div class="row mt-5">
+
+<%= render 'public/items/list', genres: @genres %>
+
+<div class="col-md-9">
+      <div class="row mt-5">
+          <div class="mb-5">
+          <%= attachment_image_tag @item, :image, :fill, 400, 400, fallback: "no_image.jpg" %>
+          <%= @item.name %>
+          ¥<%= @item.price %>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
