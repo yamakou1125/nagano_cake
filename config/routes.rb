@@ -28,6 +28,8 @@ scope module: :public do
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdraw" => "customers#withdraw"
   resources :addresses, only:[:index, :edit, :create, :update, :destroy]
+  resources :cart_items, only:[:index, :update, :destroy, :create]
+  delete "/cart_items/destroy_all" => "cart_items#destroy_all"
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
