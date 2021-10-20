@@ -14,8 +14,9 @@
 
     <div class="row mt-5">
       <%= form_with model: @cart_item, url: cart_items_path, local: true do |f| %>
+      <%= f.hidden_field :item_id, value: @item.id %>
         <div class="form-group mb-5">
-          <%= f.select :amount, {'１個': 1, '２個': 2, '３個': 3, '４個': 4, '５個': 5}, { include_blank: '個数選択'}, { class: 'form-control' , required: true } %>
+          <%= f.select :amount, *[1..10], { include_blank: '個数選択'}, { class: 'form-control' , required: true } %>
         </div>
         <div class="form-group">
           <%= f.submit 'カートに入れる', class: 'btn btn-success' %>
