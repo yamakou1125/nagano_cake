@@ -24,13 +24,14 @@ scope module: :public do
   get "/about" => "homes#about"
   resources :items, only:[:index, :show]
   get "/customers/my_page" => "customers#show"
-  # patch "/customers" => "customers#update"
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdraw" => "customers#withdraw"
   resources :addresses, only:[:index, :edit, :create, :update, :destroy]
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
   resources :cart_items, only:[:index, :update, :destroy, :create]
-  # delete "/cart_items/destroy_all" => "cart_items#destroy_all"
+  resources :orders, only:[:new, :create, :index, :show]
+  post "/orders/confirm" => "orders#confirm"
+  get "/orders/thanks" => "orders/thanks"
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

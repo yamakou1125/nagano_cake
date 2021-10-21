@@ -3,7 +3,7 @@ class Public::CartItemsController < ApplicationController
   def index
     @customer = current_customer
     @cart_items = @customer.cart_items
-    @total = 0
+    @sum = 0
   end
 
   def update
