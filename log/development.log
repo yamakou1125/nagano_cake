@@ -3832,3 +3832,1346 @@ Unpermitted parameters: :select_address, :address_id
 Completed 200 OK in 856ms (Views: 816.1ms | ActiveRecord: 0.5ms)
 
 
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-24 13:28:03 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T2awu/nXGSQlmGUHZwDX4pG9Dg84lfsyoJYqBk6g2lP5od43EwJJYm5PrH0pZmr/y1etHA34bGXvO56HrfMPbw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"1", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:18
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 613ms (Views: 504.0ms | ActiveRecord: 5.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/" for 14.13.162.32 at 2021-10-25 07:53:27 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::HomesController#top as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/public/homes_controller.rb:4
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (300.3ms)
+Completed 200 OK in 556ms (Views: 503.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/customers/sign_in" for 14.13.162.32 at 2021-10-25 07:53:42 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::SessionsController#new as HTML
+  Rendering public/sessions/new.html.erb within layouts/application
+  Rendered public/sessions/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 112ms (Views: 97.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/sign_in" for 14.13.162.32 at 2021-10-25 07:53:44 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::SessionsController#new as HTML
+  Rendering public/sessions/new.html.erb within layouts/application
+  Rendered public/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 14.13.162.32 at 2021-10-25 07:53:47 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ox+ZhsVNeQV6IrhYQ4KtE4O5fW/uhm0OlMRU1Gafi9d+Xx8drrI92F5VtvKKsdu1/tEUQnVfzm9UK7+CCnc34Q==", "customer"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/
+Completed 302 Found in 317ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 14.13.162.32 at 2021-10-25 07:53:48 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::HomesController#top as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT ?[0m  [["LIMIT", 4]]
+  ↳ app/controllers/public/homes_controller.rb:4
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (2.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 145ms (Views: 139.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cart_items" for 14.13.162.32 at 2021-10-25 07:53:50 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::CartItemsController#index as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:4
+  Rendering public/cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:22
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:26
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:26
+  Rendered public/cart_items/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 126ms (Views: 111.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 07:53:52 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 184ms (Views: 164.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 07:54:02 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4BepepuLqzVyzmhpt3AubOdndIgEeVZeTdNPKURBdDF46YLhvxMcJaFJ2AZ3pY1lo2Iqjo73GddAMOCSs4YKDA==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"1", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:18
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 126ms (Views: 116.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 07:55:04 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 104ms (Views: 99.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 07:55:09 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjZI8JWdEsjthTzUz6pmLxmn9Hfeg6iQXOZhESb/fbo2Rt64ekSJcGqoZXlSBIQG8T41qxQ6DAtcz4vojo/H2A==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 107ms (Views: 101.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 07:56:50 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.5ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 585ms (Views: 574.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 07:56:54 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjZI8JWdEsjthTzUz6pmLxmn9Hfeg6iQXOZhESb/fbo2Rt64ekSJcGqoZXlSBIQG8T41qxQ6DAtcz4vojo/H2A==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 131ms (Views: 106.9ms | ActiveRecord: 2.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 07:58:41 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (1.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 615ms (Views: 596.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 07:58:45 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjZI8JWdEsjthTzUz6pmLxmn9Hfeg6iQXOZhESb/fbo2Rt64ekSJcGqoZXlSBIQG8T41qxQ6DAtcz4vojo/H2A==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 151ms (Views: 126.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:02:57 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 98ms (Views: 97.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:02:59 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 106ms (Views: 105.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:03:05 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjZI8JWdEsjthTzUz6pmLxmn9Hfeg6iQXOZhESb/fbo2Rt64ekSJcGqoZXlSBIQG8T41qxQ6DAtcz4vojo/H2A==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 104ms (Views: 97.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:03:27 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjZI8JWdEsjthTzUz6pmLxmn9Hfeg6iQXOZhESb/fbo2Rt64ekSJcGqoZXlSBIQG8T41qxQ6DAtcz4vojo/H2A==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 117ms (Views: 111.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 08:08:31 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (154.4ms)
+Completed 200 OK in 665ms (Views: 595.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:08:35 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KeinanmsnKzGAuFwaXF9AIVfKbBRCyEXIEeSMGe2kogZmDEilnUHFEEvuN30358pbcbobJuyhYwgbnjJz8Yo6g==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 113ms (Views: 102.8ms | ActiveRecord: 1.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 08:20:51 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 712ms (Views: 668.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:20:56 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VlEVDrRobqmxV1s1rNlqytcUaBEniFfBRIlsjJwUGrxmIYNGW7H1ETZ6Apgxd4jjP42pze0x81pEoIZ1NGSg3g==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 99ms (Views: 77.2ms | ActiveRecord: 1.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateOrderDetails (20210930082420)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "order_details"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210930082420"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20210930081207)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210930081207"]]
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20210930081207)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210930081207_create_orders.rb:3
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "postal_code" varchar, "address" varchar, "name" varchar, "postage" integer DEFAULT 800, "billing_amount" integer, "payment_method" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "customer_id" integer)[0m
+  ↳ db/migrate/20210930081207_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210930081207"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOrderDetails (20210930082420)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "order_details" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "price" integer, "amount" integer, "making_status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "item_id" integer, "order_id" integer)[0m
+  ↳ db/migrate/20210930082420_create_order_details.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210930082420"]]
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 08:27:29 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (105.8ms)
+Completed 200 OK in 438ms (Views: 401.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:27:33 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eY//5o/77WymSSuROqYk3vLf0zfRDYNLh1m8k+I7FctJ/2muYCJ21CFkcjynCMb3GkYS6xu0J9CHcFZqSkuvqQ==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 78ms (Views: 68.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 08:28:37 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:28:43 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U1fIgkiZKHTvwopYQ1XGHrnC01f2DJWfjOSEJ0XkObtjJ17Kp0CzzGjv0/Xe+yQ3UVsSizy1MQSMzW7e7ZSD2Q==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 56ms (Views: 51.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:55:03 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U1fIgkiZKHTvwopYQ1XGHrnC01f2DJWfjOSEJ0XkObtjJ17Kp0CzzGjv0/Xe+yQ3UVsSizy1MQSMzW7e7ZSD2Q==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  Rendered public/orders/confirm.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano_cake/app/views/public/orders/confirm.html.erb:85: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/public/orders/confirm.html.erb:85: syntax error, unexpected end-of-input, expecting end
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 08:56:47 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (146.3ms)
+Completed 200 OK in 510ms (Views: 440.8ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:56:53 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXFC7r2cGGvdzbqE/IkCR4+Oy4sn5QKyLY07wVqnQvodAdSmUkWD01rg4ylhJ+BuZxcKV+1cpiktpNE48tf4mA==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  Rendered public/orders/confirm.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano_cake/app/views/public/orders/confirm.html.erb:85: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/public/orders/confirm.html.erb:85: syntax error, unexpected end-of-input, expecting end
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 08:59:06 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 08:59:10 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 99ms (Views: 93.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:00:03 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.8ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 1554ms (Views: 1552.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:00:08 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 96ms (Views: 91.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:00:24 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:00:38 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 54ms (Views: 50.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/orders" for 14.13.162.32 at 2021-10-25 09:00:48 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hQHnqlKhn2dSwbTa9MMQqFPvlt/CfDHnI381OGQcKiO1cXHivXgE39Xs7XdpbfKBu3ZXAwjFlXwjVt/BzGyQQQ==", "order"=>{"order_id"=>""}, "commit"=>"注文を確定する"}
+Unpermitted parameter: :order_id
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("created_at", "updated_at", "customer_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-10-25 09:00:48.206165"], ["updated_at", "2021-10-25 09:00:48.206165"], ["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/orders/thanks
+Completed 302 Found in 14ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/orders/thanks" for 14.13.162.32 at 2021-10-25 09:00:48 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:08:09 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:08:15 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:14:56 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 115ms (Views: 108.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 09:36:18 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 54ms (Views: 49.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/orders" for 14.13.162.32 at 2021-10-25 09:36:20 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wS6Fe1er3T9296RqL03TBb+SrFdIu+kUY3+r7pjNlJjxXhMzuHJGh/Ha/cey4zEsVwtti4ICTY9jVkEXML0u+g==", "order"=>{"postal_code"=>"0000000", "address"=>"東京都", "name"=>"山本太郎", "payment_method"=>"credit_card", "billing_amount"=>"2230"}, "commit"=>"注文を確定する"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("postal_code", "address", "name", "billing_amount", "payment_method", "created_at", "updated_at", "customer_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["postal_code", "0000000"], ["address", "東京都"], ["name", "山本太郎"], ["billing_amount", 2230], ["payment_method", 0], ["created_at", "2021-10-25 09:36:20.109728"], ["updated_at", "2021-10-25 09:36:20.109728"], ["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/orders/thanks
+Completed 302 Found in 18ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/orders/thanks" for 14.13.162.32 at 2021-10-25 09:36:20 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:08:52 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 632ms (Views: 619.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:08:57 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 132ms (Views: 100.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/orders" for 14.13.162.32 at 2021-10-25 10:09:03 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pGx4LQyIN6wOq5n1Is3oGNKwtRDfbu2nJWnc/wqoQ7aUHO5l41GsFImGwFi/YwoxOil0zBXXSTwlQDYGotj51A==", "order"=>{"postal_code"=>"0000000", "address"=>"東京都", "name"=>"山本太郎", "payment_method"=>"credit_card", "billing_amount"=>"2230"}, "commit"=>"注文を確定する"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mOrder Create (1.5ms)[0m  [1m[32mINSERT INTO "orders" ("postal_code", "address", "name", "billing_amount", "payment_method", "created_at", "updated_at", "customer_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["postal_code", "0000000"], ["address", "東京都"], ["name", "山本太郎"], ["billing_amount", 2230], ["payment_method", 0], ["created_at", "2021-10-25 10:09:03.510180"], ["updated_at", "2021-10-25 10:09:03.510180"], ["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:34
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:41
+  [1m[36mCartItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:41
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/public/orders_controller.rb:41
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:41
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/orders/thanks
+Completed 302 Found in 50ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/orders/thanks" for 14.13.162.32 at 2021-10-25 10:09:03 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:43:14 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 117ms (Views: 115.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:43:26 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQeJxxH7+vzWexQHlowfA0cifPVDmTHr2Y2M2yu+0+lRdx+P/iJhRFFWTaoLIv0qr7u9KYkglXDZpGYig85piw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  Rendered public/orders/confirm.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 52ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for 14.13.162.32 at 2021-10-25 10:43:42 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#index as HTML
+  Rendering public/items/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/public/items/_list.html.erb:4
+  Rendered public/items/_list.html.erb (5.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  ↳ app/views/public/items/index.html.erb:8
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/public/items/index.html.erb:11
+  Rendered public/items/index.html.erb within layouts/application (12.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/items/1" for 14.13.162.32 at 2021-10-25 10:43:45 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/items_controller.rb:9
+  Rendering public/items/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/public/items/_list.html.erb:4
+  Rendered public/items/_list.html.erb (1.3ms)
+  Rendered public/items/show.html.erb within layouts/application (6.1ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/cart_items" for 14.13.162.32 at 2021-10-25 10:43:49 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8m45YsUbw+FDHgetUT4nq/TgffluA0BSO+P+7b/stzaKseCKmRIGoty8bQk3Jfcs4v0vhE2vXolEhkRPgYLAig==", "cart_item"=>{"item_id"=>"1", "amount"=>"1"}, "commit"=>"カートに入れる"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:29
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mCartItem Create (0.4ms)[0m  [1m[32mINSERT INTO "cart_items" ("amount", "created_at", "updated_at", "item_id", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 1], ["created_at", "2021-10-25 10:43:49.355085"], ["updated_at", "2021-10-25 10:43:49.355085"], ["item_id", 1], ["customer_id", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/cart_items_controller.rb:38
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/cart_items
+Completed 302 Found in 16ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/cart_items" for 14.13.162.32 at 2021-10-25 10:43:49 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::CartItemsController#index as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:4
+  Rendering public/cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:22
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:26
+  Rendered public/cart_items/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for 14.13.162.32 at 2021-10-25 10:43:51 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#index as HTML
+  Rendering public/items/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/public/items/_list.html.erb:4
+  Rendered public/items/_list.html.erb (1.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  ↳ app/views/public/items/index.html.erb:8
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/public/items/index.html.erb:11
+  Rendered public/items/index.html.erb within layouts/application (6.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/2" for 14.13.162.32 at 2021-10-25 10:43:53 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/items_controller.rb:9
+  Rendering public/items/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/public/items/_list.html.erb:4
+  Rendered public/items/_list.html.erb (1.4ms)
+  Rendered public/items/show.html.erb within layouts/application (4.2ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_items" for 14.13.162.32 at 2021-10-25 10:43:56 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Trr8v8GqI112p6RZ4WMfngRV4j2GI0Zt+1yYt+Dk0oA2ZSVXnaPmHukFzv2HeM8ZEkiwQKWPWLaEOSIV3oqlPA==", "cart_item"=>{"item_id"=>"2", "amount"=>"2"}, "commit"=>"カートに入れる"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:29
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mCartItem Create (0.4ms)[0m  [1m[32mINSERT INTO "cart_items" ("amount", "created_at", "updated_at", "item_id", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 2], ["created_at", "2021-10-25 10:43:56.418487"], ["updated_at", "2021-10-25 10:43:56.418487"], ["item_id", 2], ["customer_id", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/cart_items_controller.rb:38
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/cart_items
+Completed 302 Found in 15ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/cart_items" for 14.13.162.32 at 2021-10-25 10:43:56 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::CartItemsController#index as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:4
+  Rendering public/cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:22
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:26
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:26
+  Rendered public/cart_items/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 71ms (Views: 68.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 10:44:00 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (94.4ms)
+Completed 200 OK in 141ms (Views: 137.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:44:08 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JW01+uRdbTPEpdxQvfDacLpioBHxiWYW8IGW5Wnx4W+9kx5hwMXaIxcibD99JXl5/mf+F3sHKZ/9YjlenjafUg==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 51ms (Views: 47.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/orders" for 14.13.162.32 at 2021-10-25 10:44:16 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8utxloPvnSnIcKA9EPL6HvWNCeiDa3dGzWj1vlvVwI3Cm+febDYGkU9d+ZCNXBg3HRTINEnS093NQR9H86V67w==", "order"=>{"postal_code"=>"0000000", "address"=>"東京都", "name"=>"山本太郎", "payment_method"=>"credit_card", "billing_amount"=>"1570"}, "commit"=>"注文を確定する"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("postal_code", "address", "name", "billing_amount", "payment_method", "created_at", "updated_at", "customer_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["postal_code", "0000000"], ["address", "東京都"], ["name", "山本太郎"], ["billing_amount", 1570], ["payment_method", 0], ["created_at", "2021-10-25 10:44:16.627045"], ["updated_at", "2021-10-25 10:44:16.627045"], ["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:34
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:41
+  [1m[36mCartItem Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/public/orders_controller.rb:41
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/public/orders_controller.rb:41
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:41
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/orders/thanks
+Completed 302 Found in 30ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/orders/thanks" for 14.13.162.32 at 2021-10-25 10:44:16 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 71ms (Views: 70.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:48:12 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (1.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 594ms (Views: 581.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/items" for 14.13.162.32 at 2021-10-25 10:48:21 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#index as HTML
+  Rendering public/items/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/public/items/_list.html.erb:4
+  Rendered public/items/_list.html.erb (5.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  ↳ app/views/public/items/index.html.erb:8
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/public/items/index.html.erb:11
+  Rendered public/items/index.html.erb within layouts/application (17.9ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 77ms (Views: 63.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/items/1" for 14.13.162.32 at 2021-10-25 10:48:23 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/items_controller.rb:9
+  Rendering public/items/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/public/items/_list.html.erb:4
+  Rendered public/items/_list.html.erb (1.4ms)
+  Rendered public/items/show.html.erb within layouts/application (11.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 71ms (Views: 58.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/cart_items" for 14.13.162.32 at 2021-10-25 10:48:26 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aIVnBvFIKo57V9oR0SIaaj9XwWqd42rmf5BDcHUN74MQWr7urUHvzeT1sLW3OcrtKUqTF75PdD0A9fnSS2OYPw==", "cart_item"=>{"item_id"=>"1", "amount"=>"2"}, "commit"=>"カートに入れる"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:29
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[36mCartItem Create (0.5ms)[0m  [1m[32mINSERT INTO "cart_items" ("amount", "created_at", "updated_at", "item_id", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 2], ["created_at", "2021-10-25 10:48:26.351109"], ["updated_at", "2021-10-25 10:48:26.351109"], ["item_id", 1], ["customer_id", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:38
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/cart_items_controller.rb:38
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/cart_items
+Completed 302 Found in 34ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/cart_items" for 14.13.162.32 at 2021-10-25 10:48:26 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::CartItemsController#index as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/cart_items_controller.rb:4
+  Rendering public/cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:22
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/cart_items/index.html.erb:26
+  Rendered public/cart_items/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 14.13.162.32 at 2021-10-25 10:48:34 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#new as HTML
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:5
+  Rendering public/orders/new.html.erb within layouts/application
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/public/orders/new.html.erb:40
+  Rendered public/orders/new.html.erb within layouts/application (79.0ms)
+Completed 200 OK in 137ms (Views: 120.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:48:40 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iBh9mKlO8/hUu35KgadLxZ04H+Op6FnXccKQerwsmz4Q5lYDjdZE6Ic8ziVBcujM2T1B5SNmFl58IT/BS+vlAw==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/orders" for 14.13.162.32 at 2021-10-25 10:48:44 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yq6zPpUiRO0QMRDibXF6d1wXtCZwO33cG21g8m9ybAf63iV2evvfVZccSU/w35hetI51+rqC2UcbRIoLxwLWZQ==", "order"=>{"postal_code"=>"0000000", "address"=>"東京都", "name"=>"山本太郎", "payment_method"=>"credit_card", "billing_amount"=>"1460"}, "commit"=>"注文を確定する"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("postal_code", "address", "name", "billing_amount", "payment_method", "created_at", "updated_at", "customer_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["postal_code", "0000000"], ["address", "東京都"], ["name", "山本太郎"], ["billing_amount", 1460], ["payment_method", 0], ["created_at", "2021-10-25 10:48:44.252164"], ["updated_at", "2021-10-25 10:48:44.252164"], ["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:34
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:39
+Completed 422 Unprocessable Entity in 40ms (ActiveRecord: 9.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (translation missing: ja.activerecord.errors.messages.record_invalid):
+  
+app/controllers/public/orders_controller.rb:39:in `block in create'
+app/controllers/public/orders_controller.rb:34:in `create'
+Started GET "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:50:56 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.5ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 327ms (Views: 319.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/orders/confirm" for 14.13.162.32 at 2021-10-25 10:51:05 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jwZcPZ4N5z7e4cFL6Z2AiZ2k7rTg5LrolRir3XBHmXa/dsp1cdR8hlnMmOZ0M2KgdT0vaCpdHnOVMUEk2DcjFA==", "order"=>{"payment_method"=>"credit_card", "select_address"=>"0", "address_id"=>"1", "postal_code"=>"", "address"=>"", "name"=>""}, "commit"=>"確認画面へ進む"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:9
+Unpermitted parameters: :select_address, :address_id
+  Rendering public/orders/confirm.html.erb within layouts/application
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/views/public/orders/confirm.html.erb:19
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  Rendered public/orders/confirm.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 110ms (Views: 87.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/orders" for 14.13.162.32 at 2021-10-25 10:51:10 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GHyFWK1P13S7nttYSESVGx58cTspu8xktXt64ir7pHkoDBMQQpZMzDyzgvXV6ncy9uWw5+MCaP+1UpAbgoseGw==", "order"=>{"postal_code"=>"0000000", "address"=>"東京都", "name"=>"山本太郎", "payment_method"=>"credit_card", "billing_amount"=>"1460"}, "commit"=>"注文を確定する"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("postal_code", "address", "name", "billing_amount", "payment_method", "created_at", "updated_at", "customer_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["postal_code", "0000000"], ["address", "東京都"], ["name", "山本太郎"], ["billing_amount", 1460], ["payment_method", 0], ["created_at", "2021-10-25 10:51:10.828246"], ["updated_at", "2021-10-25 10:51:10.828246"], ["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:31
+  [1m[36mCartItem Load (0.1ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/public/orders_controller.rb:34
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/cart_item.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:40
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:40
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/orders_controller.rb:40
+  [1m[36mOrderDetail Create (0.4ms)[0m  [1m[32mINSERT INTO "order_details" ("price", "amount", "created_at", "updated_at", "item_id", "order_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["price", 660], ["amount", 2], ["created_at", "2021-10-25 10:51:10.857619"], ["updated_at", "2021-10-25 10:51:10.857619"], ["item_id", 1], ["order_id", 6]]
+  ↳ app/controllers/public/orders_controller.rb:40
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:42
+  [1m[36mCartItem Destroy (0.2ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/public/orders_controller.rb:42
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/orders_controller.rb:42
+Redirected to https://25c17494f77549108249c0eb96a543bd.vfs.cloud9.us-east-1.amazonaws.com/orders/thanks
+Completed 302 Found in 52ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/orders/thanks" for 14.13.162.32 at 2021-10-25 10:51:11 +0000
+Cannot render console from 14.13.162.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mOrderDetail Load (0.1ms)[0m  [1m[34mSELECT  "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ? LIMIT ?[0m  [["order_id", 6], ["LIMIT", 11]]

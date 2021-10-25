@@ -11,3 +11,4 @@ Admin.create!(
     password: "password",
     password_confirmation: "password"
 )
+

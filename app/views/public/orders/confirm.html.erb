@@ -40,7 +40,7 @@
   <table class="table table-hover table-inverse table-bordered mt-5 mb-5 ml-5 col-md-4">
     <tr>
       <th class="col-md-2 bg-light">送料</th>
-      <td class="col-md-1"></td>
+      <td class="col-md-1"><%= @order.postage %></td>
     </tr>
     <tr>
       <th class="col-md-2 bg-light">商品合計</th>
@@ -48,7 +48,7 @@
     </tr>
     <tr>
       <th class="col-md-2 bg-light">請求金額</th>
-      <td class="col-md-1"></td>
+      <td class="col-md-1"><%= @sum + @order.postage %></td>
     </tr>
   </table>
 
@@ -56,7 +56,7 @@
 
   <div class="row">
     <div class="col-md-2">
-      <h5>支払方法</h5>
+      <h5><strong>支払方法</strong></h5>
     </div>
     <div class="col-md-8">
       <%= @order.payment_method_i18n %>
@@ -65,11 +65,24 @@
 
   <div class="row">
     <div class="col-md-2">
-      <h5>お届け先</h5>
+      <h5><strong>お届け先</strong></h5>
     </div>
     <div class="col-md-8">
       <%= @order.full_address %>
     </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-5"></div>
+    <%= form_with model: @order, url: orders_path, local: true do |f| %>
+    <%= f.hidden_field :postal_code, value: @order.postal_code %>
+    <%= f.hidden_field :address, value: @order.address %>
+    <%= f.hidden_field :name, value: @order.name %>
+    <%= f.hidden_field :payment_method, value: @order.payment_method %>
+    <%= f.hidden_field :billing_amount, value: @sum + @order.postage %>
+
+    <%= f.submit '注文を確定する', class: 'btn btn-success' %>
+    <% end %>
   </div>
 
 </div>
