@@ -29,9 +29,10 @@ scope module: :public do
   resources :addresses, only:[:index, :edit, :create, :update, :destroy]
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
   resources :cart_items, only:[:index, :update, :destroy, :create]
-  resources :orders, only:[:new, :create, :index, :show]
+  get "/orders/thanks" => "orders#thanks"
   post "/orders/confirm" => "orders#confirm"
-  get "/orders/thanks" => "orders/thanks"
+  resources :orders, only:[:new, :create, :index, :show]
+
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
