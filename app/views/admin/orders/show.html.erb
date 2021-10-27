@@ -7,7 +7,9 @@
 
   <div class="row mb-3">
     <div class="col-md-2"><strong>購入者</strong></div>
+    <%= link_to admin_customer_path(@order.customer.id), method: :get do %>
     <%= @order.customer.last_name %> <%= @order.customer.first_name %>
+    <% end %>
   </div>
 
   <div class="row mb-3">
@@ -17,7 +19,7 @@
 
   <div class="row mb-3">
     <div class="col-md-2"><strong>配送先</strong></div>
-    <%= @order.address %>
+    <%= @order.full_address %>
   </div>
 
   <div class="row mb-3">

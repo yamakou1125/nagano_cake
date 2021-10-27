@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_082420) do
     t.string "postal_code"
     t.string "address"
     t.string "telephone_number"
-    t.boolean "is_active"
+    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_082420) do
   create_table "order_details", force: :cascade do |t|
     t.integer "price"
     t.integer "amount"
-    t.integer "making_status"
+    t.integer "making_status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "item_id"
