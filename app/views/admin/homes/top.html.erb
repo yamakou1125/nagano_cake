@@ -1,34 +1,42 @@
 <div class="container">
-    <div class="col-md-2 bg-light text-center mb-5">
+  <div class="row">
+    <div class="col-md-2 bg-light text-center mt-5 mb-3">
       <h4>注文履歴一覧</h4>
     </div>
+  </div>
 
-<table class="table table-hover table-inverse">
-        <thead class="bg-light">
-          <tr>
-          <th>購入日時</th>
-          <th>購入者</th>
-          <th>注文個数</th>
-          <th>注文ステータス</th>
-          </tr>
-        </thead>
-      <% @orders.each do |order| %>
-      <tbody>
-        <tr>
-          <td>
-           <%= order.created_at %>
-          </td>
-          <td>
-           <%= order.last_name %> <%= order.first_name %>
-          </td>
-          <td>
-           <%= order.order_detail.amount %>
-          </td>
-          <td>
-            <%= order.status %>
-          </td>
-        </tr>
-      </tbody>
-      <% end %>
-      </table>
+  <table class="table table-hover table-inverse col-md-12">
+    <thead class="bg-light">
+      <tr>
+        <th class="col-md-auto">購入日時</th>
+        <th class="col-md-auto">購入者</th>
+        <th class="col-md-auto">注文個数</th>
+        <th class="col-md-auto">注文ステータス</th>
+      </tr>
+    </thead>
+
+    <% @orders.each do |order| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to admin_order_path(order.id), method: :get do %>
+          <%= l order.created_at %>
+          <% end %>
+        </td>
+        <td>
+          <%= order.customer.last_name %> <%= order.customer.first_name %>
+        </td>
+        <td>
+          <% order.order_details.each do |order_detail| %>
+          <% @total_amount += order_detail.amount %>
+          <% end %>
+          <%= @total_amount %>
+        </td>
+        <td>
+          <%= order.status_i18n %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
 </div>
