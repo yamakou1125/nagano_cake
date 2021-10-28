@@ -1,8 +1,21 @@
 <div class="col-md-3">
-      <div>
-        <h5 class="mb-3">ジャンル検索</h5>
-        <% genres.each do |genre| %>
-        <P><%= genre.name %></P>
-        <% end %>
-      </div>
-    </div>
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th>ジャンル検索</th>
+        </tr>
+      </thead>
+
+      <% genres.each do |genre| %>
+      <tbody>
+        <tr>
+        <td>
+          <%= link_to surch_path(genre.id), method: :get do %>
+            <%= genre.name %><br>
+          <% end %>
+        </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>

@@ -1,17 +1,19 @@
 <div class="container">
   <div class="row mt-5">
-    <div class="col-md-4"></div>
-    <div class="col-md-8">
-      ようこそ、ながのCAKEへ！
-      <br>このサイトは、ケーキ販売のECサイトになります。
-      <br>会員ではない方も商品の閲覧はできますが、
-      <br>購入には会員登録が必要になります。
-    </div>
-  </div>
+    
+    <%= render 'public/items/list', genres: @genres %>
 
+    <div class="col-md-9">
+      <div class="row mt-5">
+        <div class="col-md-8">
+          ようこそ、ながのCAKEへ！
+          <br>このサイトは、ケーキ販売のECサイトになります。
+          <br>会員ではない方も商品の閲覧はできますが、
+          <br>購入には会員登録が必要になります。
+        </div>
+       </div>
+  
   <div class="row mt-5">
-    <div class="col-md-4">
-    </div>
     <div class="col-md-8">
       <h4>
         <strong>新着商品</strong>
@@ -49,3 +51,4 @@
       <%= link_to "全ての商品を見る >", items_path %>
     </div>
   </div>
+</div>

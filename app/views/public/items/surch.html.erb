@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row mt-5">
+
+<%= render 'public/items/list', genres: @genres %>
+
+    <div class="col-md-9">
+      <h4>
+        <strong><%= @genre.name %>ジャンル一覧</strong> (全<%= @genre.items.count %>件)
+      </h4>
+      <div class="row mt-5">
+          <% @genre.items.each do |item| %>
+          <div class="col-md-3 mb-5">
+          <%= link_to(item_path(item.id)) do %>
+          <%= attachment_image_tag @item, :image, :fill, 100, 100, fallback: "no_image.jpg" %><br>
+          <%= item.name %><br>
+          ¥<%= item.price %>
+          </div>
+          <% end %>
+          <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
