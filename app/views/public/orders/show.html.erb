@@ -44,7 +44,10 @@
   <table class="table table-hover table-inverse table-bordered mb-5 ml-3 col-md-4">
       <tr>
         <th class="col-md-auto bg-light">商品合計</th>
-        <td><%= @order.billing_amount %></td>
+        <% @order_details.each do |order_detail| %>
+        <% @item_total_price += order_detail.price / order_detail.amount * order_detail.amount %>
+        <% end %>
+        <td><%= @item_total_price %></td>
       </tr>
 
       <tr>
@@ -54,7 +57,7 @@
 
       <tr>
         <th class="col-md-auto bg-light"><strong>ご請求額</strong></th>
-        <td><%= @order.billing_amount + @order.postage %></td>
+        <td><%= @item_total_price + @order.postage %></td>
       </tr>
   </table>
   </div>
@@ -83,13 +86,13 @@
           <%= order_detail.item.name %>
         </td>
         <td>
-          <%= order_detail.price %>
+          <%= order_detail.price / order_detail.amount %>
         </td>
         <td>
           <%= order_detail.amount %>
         </td>
         <td>
-          <%= order_detail.price.to_i * order_detail.amount.to_i %>
+          <%= order_detail.price / order_detail.amount * order_detail.amount %>
         </td>
       </tr>
     </tbody>

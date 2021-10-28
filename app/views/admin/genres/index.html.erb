@@ -3,6 +3,14 @@
     <h5>ジャンル一覧・追加</h5>
   </div>
 
+  <% if @genre.errors.any? %>
+  <%= @genre.errors.count %>件のエラーが発生しました
+  <% @genre.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+  <% end %>
+
+
   <%= form_with model: @genre, url: admin_genres_path, local: true do |f| %>
   <div class='row mb-5'>
     <%= f.label :ジャンル名, class: "col-md-2 col-form-label text-center" %>

@@ -10,7 +10,8 @@ def create
   if @genre.save
     redirect_to admin_genres_path
   else
-    redirect_to admin_genres_path
+    @genres = Genre.all
+    render :index
   end
 end
 
@@ -23,7 +24,7 @@ def update
   if @genre.update(genre_params)
     redirect_to admin_genres_path
   else
-    redirect_to edit_admin_genre_path(@genre.id)
+    render :edit
   end
 end
 

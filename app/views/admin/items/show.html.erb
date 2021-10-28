@@ -27,7 +27,7 @@
 
     <div class="d-flex flex-row bd-highlight mb-3">
 　    <div class="col-md-6">税込価格<br>(税抜価格)</div>
-　    <div class="col-md-6 p-0"><%= @item.price.to_i*1.08 %>円<br><%= @item.price %>円</div>
+　    <div class="col-md-6 p-0"><%= @item.with_tax_price %>円<br><%= @item.price %>円</div>
 　  </div>
 
 
@@ -43,7 +43,7 @@
 　 </div>
 
     <div>
-　    <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success" %>
+　    <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success mt-5" %>
 　  </div>
 
 </div>

@@ -5,6 +5,13 @@
     </div>
   </div>
 
+  <% if @order.errors.any? %>
+  <%= @order.errors.count %>件のエラーが発生しました
+  <% @order.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
   <div class="row">
   <table class="table table-hover table-inverse table-bordered mt-5 mb-5 col-md-7">
     <thead class="bg-light">

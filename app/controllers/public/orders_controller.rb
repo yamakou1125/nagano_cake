@@ -28,7 +28,7 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
-    @order.save
+    if @order.save
     @customer = current_customer
     @cart_items = @customer.cart_items
     @cart_items.each do |cart_item|
@@ -41,6 +41,12 @@ class Public::OrdersController < ApplicationController
     end
     @cart_items.destroy_all
     redirect_to orders_thanks_path
+    else
+      @customer = current_customer
+      @cart_items = @customer.cart_items
+      @sum = 0
+      render :confirm
+    end
   end
 
   def index
@@ -51,6 +57,7 @@ class Public::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_details = @order.order_details
+    @item_total_price = 0
   end
 
   private
