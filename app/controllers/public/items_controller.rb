@@ -5,7 +5,7 @@ class Public::ItemsController < ApplicationController
     @genres = Genre.all
   end
 
-  def surch
+  def genre
     @genres = Genre.all
     @genre = Genre.find(params[:id])
   end

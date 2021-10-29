@@ -24,7 +24,7 @@ scope module: :public do
   root to: 'homes#top'
   get "/about" => "homes#about"
   resources :items, only:[:index, :show]
-  get "/surch/:id" => "items#surch", as: 'surch'
+  get "/genre/:id" => "items#genre", as: 'genre'
   get "/customers/my_page" => "customers#show"
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdraw" => "customers#withdraw"
