@@ -34,7 +34,7 @@
           <% end %>
         </td>
         <td>
-          <%= order.billing_amount %>円
+          <%= order.billing_amount + order.postage %>円
         </td>
         <td>
           <%= order.status_i18n %>

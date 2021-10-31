@@ -15,4 +15,8 @@ class Order < ApplicationRecord
     '〒' + postal_code + ' ' + address + ' ' + name
   end
 
+  def with_tax_price
+    (price * 1.1).floor
+  end
+
 end

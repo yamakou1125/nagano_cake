@@ -45,7 +45,7 @@
       <tr>
         <th class="col-md-auto bg-light">商品合計</th>
         <% @order_details.each do |order_detail| %>
-        <% @item_total_price += order_detail.price / order_detail.amount * order_detail.amount %>
+        <% @item_total_price += order_detail.with_tax_price * order_detail.amount %>
         <% end %>
         <td><%= @item_total_price %></td>
       </tr>
@@ -86,13 +86,13 @@
           <%= order_detail.item.name %>
         </td>
         <td>
-          <%= order_detail.price / order_detail.amount %>
+          <%= order_detail.with_tax_price %>
         </td>
         <td>
           <%= order_detail.amount %>
         </td>
         <td>
-          <%= order_detail.price / order_detail.amount * order_detail.amount %>
+          <%= order_detail.with_tax_price * order_detail.amount %>
         </td>
       </tr>
     </tbody>
