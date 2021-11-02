@@ -1,24 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# DMM WEBCAMPコンテンツ【応用知識学習フェーズ】課題問題
+DMM WEBCAMPの学習コンテンツ、応用知識学習フェーズの課題問題です。
+## アプリケーション名
+nagano_cake
+### アプリケーション概要
+ながのケーキというお菓子屋さん（架空）の商品を購入できるECサイトです。
